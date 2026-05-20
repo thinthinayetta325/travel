@@ -36,7 +36,7 @@
             >Login</a
           >
           <a
-            href="#"
+            href="register.html"
             class="border border-gray-300 rounded-md px-4 py-1.5 hover:bg-gray-50 transition"
             >Sign Up</a
           >
@@ -554,11 +554,17 @@
     </section>
     <!-- icon section -->
     <section class="max-w-7xl mx-auto px-4 py-16">
+      <!-- 
+    grid-cols-1: Mobile (1 column stacked)
+    sm:grid-cols-2: Tablet (2 columns grid)
+    md:grid-cols-5: Desktop (All 5 items in 1 single horizontal row)
+  -->
       <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 items-center justify-items-center gap-6 w-full"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 items-center justify-items-center gap-6 w-full"
       >
+        <!-- Icon 1 (Row 1 on Tablet) -->
         <div
-          class="group flex items-center justify-center w-full h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl"
+          class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1"
         >
           <img
             src="images/image 27.png"
@@ -567,8 +573,9 @@
           />
         </div>
 
+        <!-- Icon 2 (Row 1 on Tablet) -->
         <div
-          class="group flex items-center justify-center w-full h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl"
+          class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1"
         >
           <img
             src="images/image 28.png"
@@ -577,8 +584,9 @@
           />
         </div>
 
+        <!-- Icon 3 (Row 2 on Tablet) -->
         <div
-          class="group flex items-center justify-center w-full h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl"
+          class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1"
         >
           <img
             src="images/image 29.png"
@@ -587,8 +595,9 @@
           />
         </div>
 
+        <!-- Icon 4 (Row 2 on Tablet) -->
         <div
-          class="group flex items-center justify-center w-full h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl"
+          class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1"
         >
           <img
             src="images/image 30.png"
@@ -597,8 +606,10 @@
           />
         </div>
 
+        <!-- Icon 5 (Row 3 on Tablet - Centered across the 2 columns) -->
+        <!-- sm:col-span-2 centers this 5th item when the grid is in 2-column mode -->
         <div
-          class="group flex items-center justify-center w-full h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl"
+          class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl sm:col-span-2 md:col-span-1"
         >
           <img
             src="images/image 31.png"
