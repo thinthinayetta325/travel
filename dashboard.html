@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MobileShop Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Simple CSS hack: If the checkbox is checked, show the mobile menu */
+      #menu-toggle:checked ~ aside {
+        transform: translateX(0);
+      }
+      #menu-toggle:checked ~ #menu-overlay {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen">
+    <main class="flex flex-col md:flex-row min-h-screen">
+      <!-- HIDDEN CHECKBOX CONTROL (No Javascript Needed) -->
+      <input type="checkbox" id="menu-toggle" class="hidden" />
+
+      <!-- BACKGROUND OVERLAY (Click outside to close) -->
+      <label
+        id="menu-overlay"
+        for="menu-toggle"
+        class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"
+      ></label>
+
+      <!-- LEFT SIDEBAR -->
+      <aside
+        class="bg-gray-900 h-screen w-64 flex flex-col justify-between fixed md:sticky top-0 left-0 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0"
+      >
+        <nav>
+          <div
+            class="flex items-center justify-between border-b border-slate-800 bg-black p-4"
+          >
+            <div class="flex items-center w-8">
+              <img src="images/mobile.png" alt="Mobile Shop" class="w-10" />
+              <h1 class="text-2xl font-bold text-white">MobileShop</h1>
+            </div>
+            <!-- CLOSE BUTTON (X Icon) -->
+            <label
+              for="menu-toggle"
+              class="text-white md:hidden cursor-pointer"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </label>
+          </div>
+
+          <!-- Menu -->
+          <div class="mt-4 px-4">
+            <p class="font-bold text-white mb-4 text-xs">MANAGEMENT</p>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href=""
+                  class="text-white font-bold rounded-lg p-4 flex items-center bg-pink-500"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-white font-bold p-4 flex items-center rounded-lg hover:bg-pink-400"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-white font-bold p-4 flex items-center rounded-lg hover:bg-pink-400"
+                  >Orders</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-white font-bold p-4 flex items-center rounded-lg hover:bg-pink-400"
+                  >Users</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="p-4 border-t border-slate-700">
+          <button
+            type="submit"
+            class="bg-gray-500 p-4 rounded-lg font-bold text-white hover:bg-blue-500 w-full"
+          >
+            Logout
+          </button>
+        </div>
+      </aside>
+
+      <!-- RIGHT SIDE -->
+      <section class="flex-1 min-w-0">
+        <!-- Top Navigation -->
+        <div class="bg-white border-b border-gray-200">
+          <nav class="flex items-center gap-4 p-4">
+            <!-- HAMBURGER MENU BUTTON (Only shows on mobile) -->
+            <label
+              for="menu-toggle"
+              class="text-gray-700 md:hidden cursor-pointer"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </label>
+
+            <h1 class="font-bold text-3xl">Dashboard</h1>
+          </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="p-4 sm:p-6 lg:p-12">
+          <!-- Cards Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="flex border rounded-lg shadow-md bg-white p-6 gap-2">
+              <img
+                src="images/dollar.png"
+                alt="Dollar"
+                class="w-16 rounded-lg shadow-md bg-green-300 p-2"
+              />
+              <div>
+                <p class="text-slate-500 font-bold">Total Sales</p>
+                <p class="font-bold text-2xl">$0.00</p>
+              </div>
+            </div>
+
+            <div class="flex border rounded-lg shadow-md bg-white p-6 gap-2">
+              <img
+                src="images/card.png"
+                alt="Add to card"
+                class="w-16 rounded-lg shadow-md bg-blue-300 p-2"
+              />
+              <div>
+                <p class="text-slate-500 font-bold">Total Orders</p>
+                <p class="font-bold text-2xl">0</p>
+              </div>
+            </div>
+
+            <div class="flex border rounded-lg shadow-md bg-white p-6 gap-2">
+              <img
+                src="images/groupcustomer.png"
+                alt="Customer"
+                class="w-16 rounded-lg shadow-md bg-purple-300 p-2"
+              />
+              <div>
+                <p class="text-slate-500 font-bold">Customers</p>
+                <p class="font-bold text-2xl">1</p>
+              </div>
+            </div>
+
+            <div class="flex border rounded-lg shadow-md bg-white p-6 gap-2">
+              <img
+                src="images/danger.png"
+                alt="Low stock"
+                class="w-16 rounded-lg shadow-md bg-red-300 p-2"
+              />
+              <div>
+                <p class="text-slate-500 font-bold">Low Stock Items</p>
+                <p class="font-bold text-2xl">0</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Heading & Table -->
+          <div
+            class="mt-10 border rounded-xl overflow-hidden shadow-md bg-white"
+          >
+            <div
+              class="flex border-b text-slate-500 justify-between items-center p-4"
+            >
+              <h1 class="font-bold text-lg">Recent Orders</h1>
+              <a href="" class="font-bold text-purple-400">View all ></a>
+            </div>
+
+            <!-- Responsive Table Container -->
+            <div class="overflow-x-auto">
+              <table class="text-slate-500 w-full text-left min-w-[600px]">
+                <thead>
+                  <tr class="bg-gray-50 border-b">
+                    <th class="p-4">ORDER ID</th>
+                    <th class="p-4">CUSTOMER</th>
+                    <th class="p-4">DATE</th>
+                    <th class="p-4">TOTAL</th>
+                    <th class="p-4">STATUS</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
