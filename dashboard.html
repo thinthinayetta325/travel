@@ -19,15 +19,9 @@
   <body class="bg-gray-100 min-h-screen">
     <main class="flex flex-col md:flex-row min-h-screen">
       <!-- HIDDEN CHECKBOX CONTROL (No Javascript Needed) -->
-      <input type="checkbox" id="menu-toggle" class="hidden" />
-
-      <!-- BACKGROUND OVERLAY (Click outside to close) -->
-      <label
-        id="menu-overlay"
-        for="menu-toggle"
-        class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"
+<input type="checkbox" id="menu-toggle" class="hidden" aria-label="Menu Toggle"/>      <!-- BACKGROUND OVERLAY (Click outside to close) -->
+      <label for="menu-toggle" id="menu-overlay"class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"
       ></label>
-
       <!-- LEFT SIDEBAR -->
       <aside
         class="bg-gray-900 h-screen w-64 flex flex-col justify-between fixed md:sticky top-0 left-0 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0"
@@ -41,8 +35,7 @@
               <h1 class="text-2xl font-bold text-white">MobileShop</h1>
             </div>
             <!-- CLOSE BUTTON (X Icon) -->
-            <label
-              for="menu-toggle"
+            <label for="menu-toggle"
               class="text-white md:hidden cursor-pointer"
             >
               <svg

@@ -1,832 +1,588 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jadoo - Travel Landing Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .card-hover:hover {
-        transform: translateY(-6px) scale(1.02);
-      }
-    </style>
-  </head>
-  <body class="bg-gray-50 overflow-x-hidden">
-    <!-- NAVIGATION BAR -->
-    <nav
-      class="fixed top-0 left-0 w-full backdrop-blur-md z-50 transition-all duration-300"
-    >
-      <div
-        class="max-w-7xl mx-auto flex items-center justify-between p-4 md:px-8"
-      >
-        <h2 class="font-bold text-2xl text-blue-950 tracking-tight">
-          Jad<span class="text-orange-500">oo</span>
-        </h2>
-        <!-- Desktop Navigation Links -->
-        <div
-          class="hidden lg:flex items-center gap-8 text-gray-600 font-medium text-sm"
-        >
-          <a href="#" class="hover:text-blue-500 transition-colors"
-            >Destinations</a
-          >
-          <a href="#" class="hover:text-blue-500 transition-colors">Hotels</a>
-          <a href="#" class="hover:text-blue-500 transition-colors">Flights</a>
-          <a href="#" class="hover:text-blue-500 transition-colors">Bookings</a>
-          <a
-            href="login.html"
-            class="hover:text-blue-500 transition-colors ml-4"
-            >Login</a
-          >
-          <a
-            href="register.html"
-            class="border border-gray-300 rounded-md px-4 py-1.5 hover:bg-gray-50 transition"
-            >Sign Up</a
-          >
-          <select
-            class="bg-transparent border-none cursor-pointer focus:outline-none text-gray-700"
-          >
-            <option>EN</option>
-          </select>
-        </div>
 
-        <!-- Mobile Hamburger Button -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jadoo-Travel Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card-hover:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 overflow-x-hidden">
+  <!-- NAVIGATION BAR -->
+  <nav class="fixed top-0 left-0 w-full backdrop-blur-md z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4 md:px-8">
+      <h2 class="font-bold text-2xl text-blue-950 tracking-tight">
+        Jad<span class="text-orange-500">oo</span>
+      </h2>
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center gap-8 text-gray-600 font-medium text-sm">
+        <a href="#" class="hover:text-blue-500 transition-colors">Destinations</a>
+        <a href="#" class="hover:text-blue-500 transition-colors">Hotels</a>
+        <a href="#" class="hover:text-blue-500 transition-colors">Flights</a>
+        <a href="#" class="hover:text-blue-500 transition-colors">Bookings</a>
+        <a href="login.html" class="hover:text-blue-500 transition-colors ml-4">Login</a>
+        <a href="register.html" class="border border-gray-300 rounded-md px-4 py-1.5 hover:bg-gray-50 transition">Sign
+          Up</a>
+        <select title="Select Language"
+          class="bg-transparent border-none cursor-pointer focus:outline-none text-gray-700">
+          <option>EN</option>
+        </select>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="menuBtn" class="lg:hidden text-gray-700 text-2xl focus:outline-none transition p-1">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu"
+      class="hidden absolute top-full left-0 w-full bg-white flex-col items-center gap-5 py-6 shadow-xl border-t border-gray-100 lg:hidden font-medium text-gray-700">
+      <a href="dashboard.html" class="hover:text-blue-500 transition-colors w-full text-center py-1">Destinations</a>
+      <a href="#" class="hover:text-blue-500 transition-colors w-full text-center py-1">Hotels</a>
+      <a href="#" class="hover:text-blue-500 transition-colors w-full text-center py-1">Flights</a>
+      <a href="quietmind.html" class="hover:text-blue-500 transition-colors w-full text-center py-1">Bookings</a>
+      <hr class="w-4/5 border-gray-100" />
+      <a href="#" class="hover:text-blue-500 transition-colors py-1">Login</a>
+      <a href="#" class="bg-blue-500 text-white rounded-md px-6 py-2 shadow-sm shadow-blue-500/20">Sign Up</a>
+
+      <!-- Mobile Language Dropdown Selector Fix -->
+      <div class="flex items-center gap-1 border border-gray-200 rounded-md px-4 py-1.5 mt-2 bg-gray-50">
+        <select aria-label="Select Language"
+          class="bg-transparent border-none cursor-pointer focus:outline-none text-gray-700 font-medium text-sm">
+          <option>EN</option>
+          <option>FR</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section
+    class="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between pt-28 md:pt-36 pb-12 px-4 md:px-8 gap-12">
+    <div class="absolute top-0 right-0 -z-10 pointer-events-none w-auto max-w-[500px] md:max-w-[700px] opacity-70">
+      <img src="Images/Decore (1).png" alt="Decore Splash Background" class="w-full h-auto" />
+    </div>
+    <!-- Text Column -->
+    <div class="w-full lg:w-1/2 flex flex-col gap-4 md:gap-6 text-center lg:text-left items-center lg:items-start">
+      <p class="text-orange-500 font-bold text-sm md:text-base tracking-wider uppercase">
+        Best Destinations Around the World
+      </p>
+      <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
+        <!-- Line 1: Ends with 'enjoy' -->
+        <span class="block">
+          Travel,
+          <span class="relative inline-block w-fit">
+            enjoy
+            <img src="Images/stick.png" alt="underline stroke"
+              class="absolute left-0 -bottom-1 lg:-bottom-2 w-full h-[6px] lg:h-[12px] object-cover pointer-events-none -z-10" />
+          </span>
+        </span>
+
+        <!-- Line 2: Ends with 'new' -->
+        <span class="block">and live a new</span>
+
+        <!-- Line 3: Ends with 'life' -->
+        <span class="block">and full life</span>
+      </h1>
+      <div class="text-gray-500 max-w-md text-sm md:text-base leading-relaxed space-y-1">
+        <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+        <p>
+          Preferred to sportsmen it engrossed listening. Park gate sell they
+          west hard for the.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-2">
         <button
-          id="menuBtn"
-          class="lg:hidden text-gray-700 text-2xl focus:outline-none transition p-1"
-        >
-          ☰
+          class="bg-orange-500 text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-blue-600 transition-colors shadow-md">
+          Find Out More
+        </button>
+        <button class="flex items-center gap-3 text-gray-700 font-medium px-5 py-3 transition duration-300">
+          <img class="w-12 h-12 object-contain" src="images/play.png" alt="Play" />
+          <span>Play Demo</span>
         </button>
       </div>
+    </div>
 
-      <!-- Mobile Dropdown Menu -->
-      <div
-        id="mobileMenu"
-        class="hidden absolute top-full left-0 w-full bg-white flex-col items-center gap-5 py-6 shadow-xl border-t border-gray-100 lg:hidden font-medium text-gray-700"
-      >
-        <a
-          href="dashboard.html"
-          class="hover:text-blue-500 transition-colors w-full text-center py-1"
-          >Destinations</a
-        >
-        <a
-          href="#"
-          class="hover:text-blue-500 transition-colors w-full text-center py-1"
-          >Hotels</a
-        >
-        <a
-          href="#"
-          class="hover:text-blue-500 transition-colors w-full text-center py-1"
-          >Flights</a
-        >
-        <a
-          href="#"
-          class="hover:text-blue-500 transition-colors w-full text-center py-1"
-          >Bookings</a
-        >
-        <hr class="w-4/5 border-gray-100" />
-        <a href="#" class="hover:text-blue-500 transition-colors py-1">Login</a>
-        <a
-          href="#"
-          class="bg-blue-500 text-white rounded-md px-6 py-2 shadow-sm shadow-blue-500/20"
-          >Sign Up</a
-        >
-
-        <!-- Mobile Language Dropdown Selector Fix -->
-        <div
-          class="flex items-center gap-1 border border-gray-200 rounded-md px-4 py-1.5 mt-2 bg-gray-50"
-        >
-        <select class="bg-transparent border-none cursor-pointer focus:outline-none text-gray-700 font-medium text-sm">
-            <option>EN</option>
-          </select>
-        </div>
+    <!-- Image Column -->
+    <div class="w-full lg:w-1/2 flex justify-center order-1 lg:order-2">
+      <div class="relative w-11/12 max-w-md lg:max-w-full">
+        <img src="images/people.png" alt="Travel Header Image" class="w-full h-auto object-cover rounded-2xl" />
       </div>
-    </nav>
+    </div>
+  </section>
 
-    <!-- HERO SECTION -->
-    <section
-      class="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between pt-28 md:pt-36 pb-12 px-4 md:px-8 gap-12"
-    >
+  <!-- SERVICES SECTION -->
+  <section class="max-w-7xl mx-auto px-6 md:px-16 py-20 text-center">
+    <h3 class="text-gray-500 font-semibold uppercase tracking-widest text-sm mb-2">
+      Category
+    </h3>
+    <h2 class="serif-font text-4xl md:text-5xl text-indigo-950 mb-16">
+      We Offer Best Services
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div
-        class="absolute top-0 right-0 -z-10 pointer-events-none w-auto max-w-[500px] md:max-w-[700px] opacity-70"
-      >
-        <img
-          src="Images/Decore (1).png"
-          alt="Decore Splash Background"
-          class="w-full h-auto"
-        />
-      </div>
-      <!-- Text Column -->
-      <div
-        class="w-full lg:w-1/2 flex flex-col gap-4 md:gap-6 text-center lg:text-left items-center lg:items-start"
-      >
-        <p
-          class="text-orange-500 font-bold text-sm md:text-base tracking-wider uppercase"
-        >
-          Best Destinations Around the World
-        </p>
-        <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
-          <!-- Line 1: Ends with 'enjoy' -->
-          <span class="block">
-            Travel,
-            <span class="relative inline-block w-fit">
-              enjoy
-              <img
-                src="Images/stick.png"
-                alt="underline stroke"
-                class="absolute left-0 -bottom-1 lg:-bottom-2 w-full h-[6px] lg:h-[12px] object-cover pointer-events-none -z-10"
-              />
-            </span>
-          </span>
-
-          <!-- Line 2: Ends with 'new' -->
-          <span class="block">and live a new</span>
-
-          <!-- Line 3: Ends with 'life' -->
-          <span class="block">and full life</span>
-        </h1>
-        <div
-          class="text-gray-500 max-w-md text-sm md:text-base leading-relaxed space-y-1"
-        >
-          <p>Built Wicket longer admire do barton vanity itself do in it.</p>
-          <p>
-            Preferred to sportsmen it engrossed listening. Park gate sell they
-            west hard for the.
+        class="group p-8 rounded-[2.5rem] transition-all duration-300 hover:bg-white hover:shadow-2xl cursor-pointer relative">
+        <div class="relative z-10">
+          <div class="text-5xl mb-6">📡</div>
+          <h4 class="text-xl font-bold text-indigo-950 mb-4">
+            Calculated Weather
+          </h4>
+          <p class="text-gray-500 text-sm">
+            Built Wicket longer admire do barton vanity itself do in it.
           </p>
         </div>
         <div
-          class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-2"
-        >
-          <button
-            class="bg-orange-500 text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-blue-600 transition-colors shadow-md"
-          >
-            Find Out More
-          </button>
-          <button
-            class="flex items-center gap-3 text-gray-700 font-medium px-5 py-3 transition duration-300"
-          >
-            <img
-              class="w-12 h-12 object-contain"
-              src="images/play.png"
-              alt="Play"
-            />
-            <span>Play Demo</span>
-          </button>
+          class="absolute -bottom-6 -left-6 w-20 h-20 bg-orange-500 rounded-t-3xl rounded-r-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         </div>
       </div>
 
-      <!-- Image Column -->
-      <div class="w-full lg:w-1/2 flex justify-center order-1 lg:order-2">
-        <div class="relative w-11/12 max-w-md lg:max-w-full">
-          <img
-            src="images/people.png"
-            alt="Travel Header Image"
-            class="w-full h-auto object-cover rounded-2xl"
-          />
+      <div
+        class="group p-8 rounded-[2.5rem] transition-all duration-300 hover:bg-white hover:shadow-2xl cursor-pointer relative">
+        <div class="text-5xl mb-6">✈️</div>
+        <h4 class="text-xl font-bold text-indigo-950 mb-4">Best Flights</h4>
+        <p class="text-gray-500 text-sm">
+          Engrossed listening. Park gate sell they west hard for the.
+        </p>
+        <div
+          class="absolute -bottom-6 -left-6 w-20 h-20 bg-orange-500 rounded-t-3xl rounded-r-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         </div>
       </div>
-    </section>
 
-    <!-- SERVICES SECTION -->
-    <section class="max-w-7xl mx-auto px-6 md:px-16 py-20 text-center">
-      <h3
-        class="text-gray-500 font-semibold uppercase tracking-widest text-sm mb-2"
-      >
-        Category
-      </h3>
-      <h2 class="serif-font text-4xl md:text-5xl text-indigo-950 mb-16">
-        We Offer Best Services
+      <div
+        class="group p-8 rounded-[2.5rem] transition-all duration-300 hover:bg-white hover:shadow-2xl cursor-pointer relative">
+        <div class="text-5xl mb-6">🎤</div>
+        <h4 class="text-xl font-bold text-indigo-950 mb-4">Local Events</h4>
+        <p class="text-gray-500 text-sm">
+          Barton vanity itself do in it. Preferrd to men it engrossed
+          listening.
+        </p>
+        <div
+          class="absolute -bottom-6 -left-6 w-20 h-20 bg-orange-500 rounded-t-3xl rounded-r-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        </div>
+      </div>
+
+      <div
+        class="group p-8 rounded-[2.5rem] transition-all duration-300 hover:bg-white hover:shadow-2xl cursor-pointer relative">
+        <div class="text-5xl mb-6">⚙️</div>
+        <h4 class="text-xl font-bold text-indigo-950 mb-4">Customization</h4>
+        <p class="text-gray-500 text-sm">
+          We deliver outsourced aviation services for military customers.
+        </p>
+        <div
+          class="absolute -bottom-6 -left-6 w-20 h-20 bg-orange-500 rounded-t-3xl rounded-r-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP SELLING DESTINATIONS SECTION -->
+  <section class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+    <h3 class="text-center text-gray-400 font-semibold text-sm tracking-widest uppercase">
+      Top Selling
+    </h3>
+    <h2 class="text-center font-extrabold text-3xl md:text-4xl text-blue-950 mt-1 mb-10">
+      Top Destinations
+    </h2>
+
+    <!-- Changed justify-end to justify-center to properly balance the grid horizontally -->
+    <div class="flex justify-center">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1160px] w-full">
+        <!-- Card 1: Rome -->
+        <div
+          class="group w-full max-w-[360px] mx-auto flex flex-col bg-white rounded-3xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer card-hover">
+          <!-- IMAGE SIZE CONFIGURATION: Modify h-64 to adjust height (e.g., h-48 for smaller, h-80 for taller) -->
+          <img src="Images/Destination 1.png" alt="Rome, Italy" class="w-full h-64 object-cover" />
+          <div class="p-6 flex flex-col justify-between flex-1">
+            <div class="flex justify-between font-bold text-gray-700 text-lg">
+              <p>Rome, Italy</p>
+              <p>$5.42k</p>
+            </div>
+            <div class="flex items-center gap-2 pt-4 text-gray-500 text-sm">
+              <img src="Images/navigation 1.png" alt="Navigation" class="w-4 h-4" />
+              <p>10 Days Trip</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Paris -->
+        <div
+          class="group w-full max-w-[360px] mx-auto flex flex-col bg-white rounded-3xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer card-hover">
+          <!-- IMAGE SIZE CONFIGURATION -->
+          <img src="Images/Destination 2.jpg" alt="Paris, France" class="w-full h-64 object-cover" />
+          <div class="p-6 flex flex-col justify-between flex-1">
+            <div class="flex justify-between font-bold text-gray-700 text-lg">
+              <p>Paris, France</p>
+              <p>$5.42k</p>
+            </div>
+            <div class="flex items-center gap-2 pt-4 text-gray-500 text-sm">
+              <img src="Images/navigation 1.png" alt="Navigation" class="w-4 h-4" />
+              <p>10 Days Trip</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Bali -->
+        <div
+          class="group w-full max-w-[360px] mx-auto flex flex-col bg-white rounded-3xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer card-hover">
+          <!-- IMAGE SIZE CONFIGURATION -->
+          <img src="Images/Destination 3.png" alt="Bali, Indonesia" class="w-full h-64 object-cover" />
+          <div class="p-6 flex flex-col justify-between flex-1">
+            <div class="flex justify-between font-bold text-gray-700 text-lg">
+              <p>Bali, Indonesia</p>
+              <p>$5.42k</p>
+            </div>
+            <div class="flex items-center gap-2 pt-4 text-gray-500 text-sm">
+              <img src="Images/navigation 1.png" alt="Navigation" class="w-4 h-4" />
+              <p>10 Days Trip</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- BOOKING INFO SECTION -->
+  <section class="max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col lg:flex-row gap-16 items-center">
+    <!-- Left Column: Steps -->
+    <div class="w-full lg:w-1/2 flex flex-col gap-2">
+      <p class="text-gray-400 font-semibold text-sm tracking-widest uppercase text-center lg:text-left">
+        Easy and Fast
+      </p>
+      <h2 class="font-bold text-3xl text-blue-950 text-center lg:text-left leading-tight">
+        Book Your Next Trip <br />In 3 Easy Steps
       </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div
-          class="group p-8 rounded-[2.5rem] transition-all duration-300 hover:bg-white hover:shadow-2xl cursor-pointer relative"
-        >
-          <div class="relative z-10">
-            <div class="text-5xl mb-6">📡</div>
-            <h4 class="text-xl font-bold text-indigo-950 mb-4">
-              Calculated Weather
+      <div class="flex flex-col gap-6 mt-8 max-w-md mx-auto lg:mx-0">
+        <!-- Step 1 -->
+        <div class="flex items-start gap-4">
+          <img src="images/Group 7.png" alt="Icon" class="w-12 h-12 flex-shrink-0 object-contain" />
+          <div>
+            <h4 class="font-bold text-gray-700">Choose Destination</h4>
+            <p class="text-gray-400 text-sm mt-0.5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
+              tortor tempus.
+            </p>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="flex items-start gap-4">
+          <img src="images/Group 12.png" alt="Icon" class="w-12 h-12 flex-shrink-0 object-contain" />
+          <div>
+            <h4 class="font-bold text-gray-700">Make Payment</h4>
+            <p class="text-gray-400 text-sm mt-0.5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
+              tortor tempus.
+            </p>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="flex items-start gap-4">
+          <img src="images/Group 11.png" alt="Icon" class="w-12 h-12 flex-shrink-0 object-contain" />
+          <div>
+            <h4 class="font-bold text-gray-700">
+              Reach Airport on Selected Date
             </h4>
-            <p class="text-gray-500 text-sm">
-              Built Wicket longer admire do barton vanity itself do in it.
+            <p class="text-gray-400 text-sm mt-0.5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
+              tortor tempus.
             </p>
           </div>
-          <div
-            class="absolute -bottom-6 -left-6 w-20 h-20 bg-orange-500 rounded-t-3xl rounded-r-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          ></div>
-        </div>
-
-        <div
-          class="group p-8 rounded-[2.5rem] transition-all duration-300 hover:bg-white hover:shadow-2xl cursor-pointer relative"
-        >
-          <div class="text-5xl mb-6">✈️</div>
-          <h4 class="text-xl font-bold text-indigo-950 mb-4">Best Flights</h4>
-          <p class="text-gray-500 text-sm">
-            Engrossed listening. Park gate sell they west hard for the.
-          </p>
-          <div
-            class="absolute -bottom-6 -left-6 w-20 h-20 bg-orange-500 rounded-t-3xl rounded-r-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          ></div>
-        </div>
-
-        <div
-          class="group p-8 rounded-[2.5rem] transition-all duration-300 hover:bg-white hover:shadow-2xl cursor-pointer relative"
-        >
-          <div class="text-5xl mb-6">🎤</div>
-          <h4 class="text-xl font-bold text-indigo-950 mb-4">Local Events</h4>
-          <p class="text-gray-500 text-sm">
-            Barton vanity itself do in it. Preferrd to men it engrossed
-            listening.
-          </p>
-          <div
-            class="absolute -bottom-6 -left-6 w-20 h-20 bg-orange-500 rounded-t-3xl rounded-r-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          ></div>
-        </div>
-
-        <div
-          class="group p-8 rounded-[2.5rem] transition-all duration-300 hover:bg-white hover:shadow-2xl cursor-pointer relative"
-        >
-          <div class="text-5xl mb-6">⚙️</div>
-          <h4 class="text-xl font-bold text-indigo-950 mb-4">Customization</h4>
-          <p class="text-gray-500 text-sm">
-            We deliver outsourced aviation services for military customers.
-          </p>
-          <div
-            class="absolute -bottom-6 -left-6 w-20 h-20 bg-orange-500 rounded-t-3xl rounded-r-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          ></div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- TOP SELLING DESTINATIONS SECTION -->
-    <section class="max-w-7xl mx-auto px-4 md:px-8 py-16">
-      <h3
-        class="text-center text-gray-400 font-semibold text-sm tracking-widest uppercase"
-      >
-        Top Selling
-      </h3>
-      <h2
-        class="text-center font-extrabold text-3xl md:text-4xl text-blue-950 mt-1 mb-10"
-      >
-        Top Destinations
+    <!-- Right Column: Card Graphics -->
+    <div class="w-full lg:w-1/2 flex justify-center items-center pt-8 lg:pt-0">
+      <div class="relative w-full max-w-[340px] font-sans">
+        <!-- Base UI Card Component -->
+        <div class="bg-white rounded-[2rem] shadow-2xl p-5 border border-gray-100">
+          <img src="images/Rectangle 17.png" alt="Greece" class="w-full h-40 object-cover rounded-3xl mb-4" />
+          <h3 class="font-bold text-lg">Trip To Greece</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            14-29 June | by Robbin joseph
+          </p>
+
+          <div class="flex gap-3 mb-6">
+            <div class="bg-gray-100 p-1 rounded-full">
+              <img src="images/LEAF.png" alt="" class="w-4 h-4" />
+            </div>
+            <div class="bg-gray-100 p-1 rounded-full">
+              <img src="images/map icon.png" alt="" class="w-4 h-4" />
+            </div>
+            <div class="bg-gray-100 p-1 rounded-full">
+              <img src="images/send.png" alt="" class="w-4 h-4" />
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2 text-gray-400 text-sm">
+              <img src="images/building 1.png" alt="" class="w-5 h-5" />
+              <span>24 people going</span>
+            </div>
+            <img src="images/heart (6) 1.png" alt="" class="w-6 h-6" />
+          </div>
+        </div>
+
+        <!-- Floating Micro-Card Component -->
+        <div
+          class="absolute -right-8 md:-right-16 bottom-12 bg-white rounded-2xl shadow-2xl p-4 flex gap-3 w-64 border border-gray-50 z-20">
+          <img src="images/image 32.png" alt="" class="w-12 h-12 rounded-full object-cover shadow-sm" />
+          <div class="flex-1">
+            <p class="text-[10px] text-gray-400 font-medium">Ongoing</p>
+            <p class="font-bold text-sm mb-1">Trip to Rome</p>
+            <div class="flex flex-col gap-1">
+              <p class="text-[11px] font-bold text-gray-700">
+                <span class="text-purple-600">40%</span> completed
+              </p>
+              <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-purple-600 h-full rounded-full w-[40%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+    <!-- Left Side: Headers -->
+    <div class="w-full lg:w-2/5 text-center lg:text-left flex flex-col items-center lg:items-start gap-2">
+      <p class="text-gray-400 font-semibold text-sm tracking-widest uppercase">
+        Testimonials
+      </p>
+      <h2 class="font-extrabold text-3xl md:text-4xl text-blue-950 leading-tight">
+        What People Say <br class="hidden lg:inline" />About Us.
       </h2>
+      <div class="flex justify-center lg:justify-start mt-4">
+        <img src="images/Group 61.png" alt="Pagination" class="w-14 h-auto rounded-lg shadow-lg" />
+      </div>
+    </div>
 
-      <!-- Changed justify-end to justify-center to properly balance the grid horizontally -->
-      <div class="flex justify-center">
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1160px] w-full"
-        >
-          <!-- Card 1: Rome -->
-          <div
-            class="group w-full max-w-[360px] mx-auto flex flex-col bg-white rounded-3xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer card-hover"
-          >
-            <!-- IMAGE SIZE CONFIGURATION: Modify h-64 to adjust height (e.g., h-48 for smaller, h-80 for taller) -->
-            <img
-              src="Images/Destination 1.png"
-              alt="Rome, Italy"
-              class="w-full h-64 object-cover"
-            />
-            <div class="p-6 flex flex-col justify-between flex-1">
-              <div class="flex justify-between font-bold text-gray-700 text-lg">
-                <p>Rome, Italy</p>
-                <p>$5.42k</p>
-              </div>
-              <div class="flex items-center gap-2 pt-4 text-gray-500 text-sm">
-                <img
-                  src="Images/navigation 1.png"
-                  alt="Navigation"
-                  class="w-4 h-4"
-                />
-                <p>10 Days Trip</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2: Paris -->
-          <div
-            class="group w-full max-w-[360px] mx-auto flex flex-col bg-white rounded-3xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer card-hover"
-          >
-            <!-- IMAGE SIZE CONFIGURATION -->
-            <img
-              src="Images/Destination 2.jpg"
-              alt="Paris, France"
-              class="w-full h-64 object-cover"
-            />
-            <div class="p-6 flex flex-col justify-between flex-1">
-              <div class="flex justify-between font-bold text-gray-700 text-lg">
-                <p>Paris, France</p>
-                <p>$5.42k</p>
-              </div>
-              <div class="flex items-center gap-2 pt-4 text-gray-500 text-sm">
-                <img
-                  src="Images/navigation 1.png"
-                  alt="Navigation"
-                  class="w-4 h-4"
-                />
-                <p>10 Days Trip</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3: Bali -->
-          <div
-            class="group w-full max-w-[360px] mx-auto flex flex-col bg-white rounded-3xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer card-hover"
-          >
-            <!-- IMAGE SIZE CONFIGURATION -->
-            <img
-              src="Images/Destination 3.png"
-              alt="Bali, Indonesia"
-              class="w-full h-64 object-cover"
-            />
-            <div class="p-6 flex flex-col justify-between flex-1">
-              <div class="flex justify-between font-bold text-gray-700 text-lg">
-                <p>Bali, Indonesia</p>
-                <p>$5.42k</p>
-              </div>
-              <div class="flex items-center gap-2 pt-4 text-gray-500 text-sm">
-                <img
-                  src="Images/navigation 1.png"
-                  alt="Navigation"
-                  class="w-4 h-4"
-                />
-                <p>10 Days Trip</p>
-              </div>
-            </div>
-          </div>
+    <!-- Right Side: Layered Testimonial Cards -->
+    <div class="w-full lg:w-3/5 relative min-h-[320px] sm:min-h-[280px] flex items-center justify-center pt-6">
+      <!-- Underlay (Back Card) -->
+      <div
+        class="absolute right-6 md:right-12 -bottom-4 z-0 w-11/12 max-w-md rounded-2xl border border-gray-100 bg-white p-6 shadow-md opacity-60 hidden sm:block transform translate-y-4">
+        <div class="pt-12">
+          <h1 class="font-bold text-blue-950">Chris Thomas</h1>
+          <p class="text-gray-400 text-xs mt-0.5">CEO of Red Button</p>
         </div>
       </div>
-    </section>
-    <!-- BOOKING INFO SECTION -->
-    <section
-      class="max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col lg:flex-row gap-16 items-center"
-    >
-      <!-- Left Column: Steps -->
-      <div class="w-full lg:w-1/2 flex flex-col gap-2">
-        <p
-          class="text-gray-400 font-semibold text-sm tracking-widest uppercase text-center lg:text-left"
-        >
-          Easy and Fast
+
+      <!-- Overlay (Front Primary Card) -->
+      <div
+        class="relative z-10 w-full max-w-md rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-xl transition-all duration-300 -translate-x-4 lg:-translate-x-8">
+        <img src="images/men.png" alt="User Profile"
+          class="absolute -left-5 -top-5 z-20 h-12 w-12 rounded-full border-2 border-white object-cover shadow-md" />
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed italic">
+          "On the windows talking painted pasture yet its express parties use.
+          Sure last upon he same as knew next. Of believed or diverted no."
         </p>
-        <h2
-          class="font-bold text-3xl text-blue-950 text-center lg:text-left leading-tight"
-        >
-          Book Your Next Trip <br />In 3 Easy Steps
-        </h2>
+        <div class="mt-6">
+          <h1 class="font-bold text-blue-950 text-base">Mike Taylor</h1>
+          <p class="text-gray-400 text-xs mt-0.5">Lahore, Pakistan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- icon section -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 items-center justify-items-center gap-6 w-full">
+      <!-- Icon 1 (Row 1 on Tablet) -->
+      <div
+        class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1">
+        <img src="images/image 27.png" alt="Logo"
+          class="h-16 max-w-[140px] w-full object-contain filter grayscale opacity-50 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105" />
+      </div>
 
-        <div class="flex flex-col gap-6 mt-8 max-w-md mx-auto lg:mx-0">
-          <!-- Step 1 -->
-          <div class="flex items-start gap-4">
-            <img
-              src="images/Group 7.png"
-              alt="Icon"
-              class="w-12 h-12 flex-shrink-0 object-contain"
-            />
-            <div>
-              <h4 class="font-bold text-gray-700">Choose Destination</h4>
-              <p class="text-gray-400 text-sm mt-0.5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
-                tortor tempus.
-              </p>
+      <!-- Icon 2 (Row 1 on Tablet) -->
+      <div
+        class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1">
+        <img src="images/image 28.png" alt="Logo"
+          class="h-16 max-w-[140px] w-full object-contain filter grayscale opacity-50 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105" />
+      </div>
+
+      <!-- Icon 3 (Row 2 on Tablet) -->
+      <div
+        class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1">
+        <img src="images/image 29.png" alt="Logo"
+          class="h-16 max-w-[140px] w-full object-contain filter grayscale opacity-50 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105" />
+      </div>
+
+      <!-- Icon 4 (Row 2 on Tablet) -->
+      <div
+        class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1">
+        <img src="images/image 30.png" alt="Logo"
+          class="h-16 max-w-[140px] w-full object-contain filter grayscale opacity-50 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105" />
+      </div>
+      <div
+        class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl sm:col-span-2 md:col-span-1">
+        <img src="images/image 31.png" alt="Logo"
+          class="h-16 max-w-[140px] w-full object-contain filter grayscale opacity-50 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105" />
+      </div>
+    </div>
+  </section>
+  <!-- SUBSCRIBE SECTION -->
+  <section class="max-w-7xl mx-auto px-6 md:px-16 py-20">
+    <div class="relative">
+      <div
+        class="bg-[#e4dff0] rounded-tl-[100px] rounded-br-[20px] rounded-bl-[20px] rounded-tr-[20px] p-10 md:p-20 relative overflow-hidden">
+        <img src="images/Group 42(1).png" alt=""
+          class="absolute left-0 bottom-0 w-[300px] opacity-50 pointer-events-none" />
+
+        <img src="images/Group 42.png" alt="" class="absolute right-0 top-0 w-[250px] opacity-50 pointer-events-none" />
+
+        <div class="relative z-10 text-center">
+          <h2 class="text-2xl md:text-4xl font-bold text-gray-500 mb-10 max-w-2xl mx-auto leading-snug">
+            <span class="block">Subscribe to get information,</span>
+            <span class="block">latest news and other interesting</span>
+            <span class="block">offers about Cobham</span>
+          </h2>
+
+          <form class="flex flex-col md:flex-row items-center justify-center gap-4">
+            <div class="relative w-full md:w-96">
+              <img src="images/mail.png" alt="Email icon"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 object-contain opacity-70" />
+              <input type="email" placeholder="Your email"
+                class="w-full pl-12 pr-6 py-4 rounded-xl focus:outline-none shadow-sm border border-transparent bg-white text-gray-700" />
             </div>
-          </div>
-          <!-- Step 2 -->
-          <div class="flex items-start gap-4">
-            <img
-              src="images/Group 12.png"
-              alt="Icon"
-              class="w-12 h-12 flex-shrink-0 object-contain"
-            />
-            <div>
-              <h4 class="font-bold text-gray-700">Make Payment</h4>
-              <p class="text-gray-400 text-sm mt-0.5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
-                tortor tempus.
-              </p>
-            </div>
-          </div>
-          <!-- Step 3 -->
-          <div class="flex items-start gap-4">
-            <img
-              src="images/Group 11.png"
-              alt="Icon"
-              class="w-12 h-12 flex-shrink-0 object-contain"
-            />
-            <div>
-              <h4 class="font-bold text-gray-700">
-                Reach Airport on Selected Date
-              </h4>
-              <p class="text-gray-400 text-sm mt-0.5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
-                tortor tempus.
-              </p>
-            </div>
-          </div>
+            <button type="submit"
+              class="bg-[#FF946D] text-white px-12 py-4 rounded-xl font-medium shadow-md hover:bg-[#ff8354] transition whitespace-nowrap">
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
 
-      <!-- Right Column: Card Graphics -->
-      <div
-        class="w-full lg:w-1/2 flex justify-center items-center pt-8 lg:pt-0"
-      >
-        <div class="relative w-full max-w-[340px] font-sans">
-          <!-- Base UI Card Component -->
-          <div
-            class="bg-white rounded-[2rem] shadow-2xl p-5 border border-gray-100"
-          >
-            <img
-              src="images/Rectangle 17.png"
-              alt="Greece"
-              class="w-full h-40 object-cover rounded-3xl mb-4"
-            />
-            <h3 class="font-bold text-lg">Trip To Greece</h3>
-            <p class="text-gray-400 text-sm mb-4">
-              14-29 June | by Robbin joseph
-            </p>
-
-            <div class="flex gap-3 mb-6">
-              <div class="bg-gray-100 p-1 rounded-full">
-                <img src="images/LEAF.png" alt="" class="w-4 h-4" />
-              </div>
-              <div class="bg-gray-100 p-1 rounded-full">
-                <img src="images/map icon.png" alt="" class="w-4 h-4" />
-              </div>
-              <div class="bg-gray-100 p-1 rounded-full">
-                <img src="images/send.png" alt="" class="w-4 h-4" />
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2 text-gray-400 text-sm">
-                <img src="images/building 1.png" alt="" class="w-5 h-5" />
-                <span>24 people going</span>
-              </div>
-              <img src="images/heart (6) 1.png" alt="" class="w-6 h-6" />
-            </div>
-          </div>
-
-          <!-- Floating Micro-Card Component -->
-          <div
-            class="absolute -right-8 md:-right-16 bottom-12 bg-white rounded-2xl shadow-2xl p-4 flex gap-3 w-64 border border-gray-50 z-20"
-          >
-            <img
-              src="images/image 32.png"
-              alt=""
-              class="w-12 h-12 rounded-full object-cover shadow-sm"
-            />
-            <div class="flex-1">
-              <p class="text-[10px] text-gray-400 font-medium">Ongoing</p>
-              <p class="font-bold text-sm mb-1">Trip to Rome</p>
-              <div class="flex flex-col gap-1">
-                <p class="text-[11px] font-bold text-gray-700">
-                  <span class="text-purple-600">40%</span> completed
-                </p>
-                <div
-                  class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden"
-                >
-                  <div class="bg-purple-600 h-full rounded-full w-[40%]"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="absolute -top-6 -right-6 w-16 h-16 flex items-center justify-center z-30">
+        <img src="images/telegram.png" alt="Telegram icon" class="w-16 h-16 drop-shadow-xl" />
       </div>
-    </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section
-      class="max-w-7xl mx-auto px-4 md:px-8 py-16 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center"
-    >
-      <!-- Left Side: Headers -->
-      <div
-        class="w-full lg:w-2/5 text-center lg:text-left flex flex-col items-center lg:items-start gap-2"
-      >
-        <p
-          class="text-gray-400 font-semibold text-sm tracking-widest uppercase"
-        >
-          Testimonials
+      <div class="absolute -bottom-12 -right-8 z-0 opacity-40">
+        <img src="images/plus.png" alt="" class="w-20" />
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER SECTION -->
+  <footer class="max-w-7xl mx-auto px-5 py-10 text-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div class="text-center lg:text-left">
+        <h1 class="text-4xl font-bold text-blue-950">Jadoo.</h1>
+        <p class="text-gray-500 mt-5 text-sm leading-6">
+          Book your trip in minutes, get full control for much longer.
         </p>
-        <h2
-          class="font-extrabold text-3xl md:text-4xl text-blue-950 leading-tight"
-        >
-          What People Say <br class="hidden lg:inline" />About Us.
-        </h2>
-        <div class="flex justify-center lg:justify-start mt-4">
-          <img
-            src="images/Group 61.png"
-            alt="Pagination"
-            class="w-14 h-auto rounded-lg shadow-lg"
-          />
-        </div>
       </div>
 
-      <!-- Right Side: Layered Testimonial Cards -->
-      <div
-        class="w-full lg:w-3/5 relative min-h-[320px] sm:min-h-[280px] flex items-center justify-center pt-6"
-      >
-        <!-- Underlay (Back Card) -->
-        <div
-          class="absolute right-6 md:right-12 -bottom-4 z-0 w-11/12 max-w-md rounded-2xl border border-gray-100 bg-white p-6 shadow-md opacity-60 hidden sm:block transform translate-y-4"
-        >
-          <div class="pt-12">
-            <h1 class="font-bold text-blue-950">Chris Thomas</h1>
-            <p class="text-gray-400 text-xs mt-0.5">CEO of Red Button</p>
+      <div class="text-center lg:text-left">
+        <h3 class="font-bold text-lg mb-5">Company</h3>
+        <ul class="space-y-3 text-gray-500">
+          <li>
+            <a href="#" class="hover:text-blue-500 transition">About</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-500 transition">Careers</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-500 transition">Mobile</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="text-center lg:text-left">
+        <h3 class="font-bold text-lg mb-5">Contact</h3>
+        <ul class="space-y-3 text-gray-500">
+          <li>
+            <a href="#" class="hover:text-blue-500 transition">Help/FAQ</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-500 transition">Press</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-500 transition">Affiliates</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="text-center lg:text-left">
+        <h3 class="font-bold text-lg mb-5">More</h3>
+        <ul class="space-y-3 text-gray-500">
+          <li>
+            <a href="#" class="hover:text-blue-500 transition">Airlinefees</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-500 transition">Airline</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-500 transition">Low fare tips</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-gray-100 flex justify-center items-center">
+            <img src="images/Facebook Icon.png" alt="" />
+          </div>
+          <div class="w-10 h-10 rounded-full bg-pink-200 flex justify-center items-center">
+            <img src="images/Social.png" alt="" />
+          </div>
+          <div class="w-10 h-10 rounded-full bg-gray-100 flex justify-center items-center">
+            <img src="images/Social(1).png" alt="" />
           </div>
         </div>
 
-        <!-- Overlay (Front Primary Card) -->
-        <div
-          class="relative z-10 w-full max-w-md rounded-2xl border border-gray-100 bg-white p-6 md:p-8 shadow-xl transition-all duration-300 -translate-x-4 lg:-translate-x-8"
-        >
-          <img
-            src="images/men.png"
-            alt="User Profile"
-            class="absolute -left-5 -top-5 z-20 h-12 w-12 rounded-full border-2 border-white object-cover shadow-md"
-          />
-          <p class="text-gray-500 text-sm md:text-base leading-relaxed italic">
-            "On the windows talking painted pasture yet its express parties use.
-            Sure last upon he same as knew next. Of believed or diverted no."
-          </p>
-          <div class="mt-6">
-            <h1 class="font-bold text-blue-950 text-base">Mike Taylor</h1>
-            <p class="text-gray-400 text-xs mt-0.5">Lahore, Pakistan</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- icon section -->
-    <section class="max-w-7xl mx-auto px-4 py-16">
-      <!-- 
-    grid-cols-1: Mobile (1 column stacked)
-    sm:grid-cols-2: Tablet (2 columns grid)
-    md:grid-cols-5: Desktop (All 5 items in 1 single horizontal row)
-  -->
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 items-center justify-items-center gap-6 w-full"
-      >
-        <!-- Icon 1 (Row 1 on Tablet) -->
-        <div
-          class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1"
-        >
-          <img
-            src="images/image 27.png"
-            alt="Logo"
-            class="h-16 max-w-[140px] w-full object-contain filter grayscale opacity-50 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
-          />
-        </div>
+        <p class="text-gray-500 m-5">Discover our app</p>
 
-        <!-- Icon 2 (Row 1 on Tablet) -->
-        <div
-          class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1"
-        >
-          <img
-            src="images/image 28.png"
-            alt="Logo"
-            class="h-16 max-w-[140px] w-full object-contain filter grayscale opacity-50 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
-          />
-        </div>
-
-        <!-- Icon 3 (Row 2 on Tablet) -->
-        <div
-          class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1"
-        >
-          <img
-            src="images/image 29.png"
-            alt="Logo"
-            class="h-16 max-w-[140px] w-full object-contain filter grayscale opacity-50 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
-          />
-        </div>
-
-        <!-- Icon 4 (Row 2 on Tablet) -->
-        <div
-          class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl md:col-span-1"
-        >
-          <img
-            src="images/image 30.png"
-            alt="Logo"
-            class="h-16 max-w-[140px] w-full object-contain filter grayscale opacity-50 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
-          />
-        </div>
-
-        <!-- Icon 5 (Row 3 on Tablet - Centered across the 2 columns) -->
-        <!-- sm:col-span-2 centers this 5th item when the grid is in 2-column mode -->
-        <div
-          class="group flex items-center justify-center w-full max-w-sm sm:max-w-none h-24 px-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl sm:col-span-2 md:col-span-1"
-        >
-          <img
-            src="images/image 31.png"
-            alt="Logo"
-            class="h-16 max-w-[140px] w-full object-contain filter grayscale opacity-50 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
-          />
-        </div>
-      </div>
-    </section>
-    <!-- SUBSCRIBE SECTION -->
-    <section class="max-w-7xl mx-auto px-6 md:px-16 py-20">
-      <div class="relative">
-        <div
-          class="bg-[#e4dff0] rounded-tl-[100px] rounded-br-[20px] rounded-bl-[20px] rounded-tr-[20px] p-10 md:p-20 relative overflow-hidden"
-        >
-          <img
-            src="images/Group 42(1).png"
-            alt=""
-            class="absolute left-0 bottom-0 w-[300px] opacity-50 pointer-events-none"
-          />
-
-          <img
-            src="images/Group 42.png"
-            alt=""
-            class="absolute right-0 top-0 w-[250px] opacity-50 pointer-events-none"
-          />
-
-          <div class="relative z-10 text-center">
-            <h2
-              class="text-2xl md:text-4xl font-bold text-gray-500 mb-10 max-w-2xl mx-auto leading-snug"
-            >
-              <span class="block">Subscribe to get information,</span>
-              <span class="block">latest news and other interesting</span>
-              <span class="block">offers about Cobham</span>
-            </h2>
-
-            <form
-              class="flex flex-col md:flex-row items-center justify-center gap-4"
-            >
-              <div class="relative w-full md:w-96">
-                <img
-                  src="images/mail.png"
-                  alt="Email icon"
-                  class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 object-contain opacity-70"
-                />
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  class="w-full pl-12 pr-6 py-4 rounded-xl focus:outline-none shadow-sm border border-transparent bg-white text-gray-700"
-                />
-              </div>
-              <button
-                type="submit"
-                class="bg-[#FF946D] text-white px-12 py-4 rounded-xl font-medium shadow-md hover:bg-[#ff8354] transition whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <div
-          class="absolute -top-6 -right-6 w-16 h-16 flex items-center justify-center z-30"
-        >
-          <img
-            src="images/telegram.png"
-            alt="Telegram icon"
-            class="w-16 h-16 drop-shadow-xl"
-          />
-        </div>
-
-        <div class="absolute -bottom-12 -right-8 z-0 opacity-40">
-          <img src="images/plus.png" alt="" class="w-20" />
-        </div>
-      </div>
-    </section>
-    <!-- FOOTER SECTION -->
-    <footer class="max-w-7xl mx-auto px-5 py-10 text-center">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
-        <div class="text-center lg:text-left">
-          <h1 class="text-4xl font-bold text-blue-950">Jadoo.</h1>
-          <p class="text-gray-500 mt-5 text-sm leading-6">
-            Book your trip in minutes, get full control for much longer.
-          </p>
-        </div>
-
-        <div class="text-center lg:text-left">
-          <h3 class="font-bold text-lg mb-5">Company</h3>
-          <ul class="space-y-3 text-gray-500">
-            <li>
-              <a href="#" class="hover:text-blue-500 transition">About</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-blue-500 transition">Careers</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-blue-500 transition">Mobile</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="text-center lg:text-left">
-          <h3 class="font-bold text-lg mb-5">Contact</h3>
-          <ul class="space-y-3 text-gray-500">
-            <li>
-              <a href="#" class="hover:text-blue-500 transition">Help/FAQ</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-blue-500 transition">Press</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-blue-500 transition">Affiliates</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="text-center lg:text-left">
-          <h3 class="font-bold text-lg mb-5">More</h3>
-          <ul class="space-y-3 text-gray-500">
-            <li>
-              <a href="#" class="hover:text-blue-500 transition">Airlinefees</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-blue-500 transition">Airline</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-blue-500 transition"
-                >Low fare tips</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <div class="flex gap-4">
-            <div
-              class="w-10 h-10 rounded-full bg-gray-100 flex justify-center items-center"
-            >
-              <img src="images/Facebook Icon.png" alt="" />
+        <div class="flex gap-3 mt-4 flex-row flex-nowrap justify-center">
+          <button
+            class="bg-black hover:bg-gray-900 text-white py-2 px-4 rounded-full flex items-center gap-2.5 transition shadow-md w-[120px] h-[42px]">
+            <img src="Images/google-play 1.png" alt="Google Play" class="h-5 w-auto flex-shrink-0" />
+            <div class="flex flex-col text-left leading-tight">
+              <span class="text-[7px] tracking-wider uppercase text-gray-400 font-bold">GET IT ON</span>
+              <span class="text-[11px] font-semibold tracking-tight text-white whitespace-nowrap">Google Play</span>
             </div>
-            <div
-              class="w-10 h-10 rounded-full bg-pink-200 flex justify-center items-center"
-            >
-              <img src="images/Social.png" alt="" />
+          </button>
+
+          <button
+            class="bg-black hover:bg-gray-900 text-white py-2 px-4 rounded-full flex items-center gap-2.5 transition shadow-md w-[120px] h-[42px]">
+            <img src="Images/apple.png" alt="App Store" class="h-5 w-auto flex-shrink-0" />
+            <div class="flex flex-col text-left leading-tight">
+              <span class="text-[7px] tracking-wider text-gray-400 font-medium">Available on the</span>
+              <span class="text-[11px] font-semibold tracking-tight text-white whitespace-nowrap">App Store</span>
             </div>
-            <div
-              class="w-10 h-10 rounded-full bg-gray-100 flex justify-center items-center"
-            >
-              <img src="images/Social(1).png" alt="" />
-            </div>
-          </div>
-
-          <p class="text-gray-500 m-5">Discover our app</p>
-
-          <div class="flex gap-3 mt-4 flex-row flex-nowrap justify-center">
-            <button
-              class="bg-black hover:bg-gray-900 text-white py-2 px-4 rounded-full flex items-center gap-2.5 transition shadow-md w-[120px] h-[42px]"
-            >
-              <img
-                src="Images/google-play 1.png"
-                alt="Google Play"
-                class="h-5 w-auto flex-shrink-0"
-              />
-              <div class="flex flex-col text-left leading-tight">
-                <span
-                  class="text-[7px] tracking-wider uppercase text-gray-400 font-bold"
-                  >GET IT ON</span
-                >
-                <span
-                  class="text-[11px] font-semibold tracking-tight text-white whitespace-nowrap"
-                  >Google Play</span
-                >
-              </div>
-            </button>
-
-            <button
-              class="bg-black hover:bg-gray-900 text-white py-2 px-4 rounded-full flex items-center gap-2.5 transition shadow-md w-[120px] h-[42px]"
-            >
-              <img
-                src="Images/apple.png"
-                alt="App Store"
-                class="h-5 w-auto flex-shrink-0"
-              />
-              <div class="flex flex-col text-left leading-tight">
-                <span
-                  class="text-[7px] tracking-wider text-gray-400 font-medium"
-                  >Available on the</span
-                >
-                <span
-                  class="text-[11px] font-semibold tracking-tight text-white whitespace-nowrap"
-                  >App Store</span
-                >
-              </div>
-            </button>
-          </div>
+          </button>
         </div>
       </div>
+    </div>
 
-      <p class="text-gray-400 text-sm mt-16">All rights reserved @jadoo.co</p>
-    </footer>
+    <p class="text-gray-400 text-sm mt-16">All rights reserved @jadoo.co</p>
+  </footer>
 
-    <!-- MOBILE INTERACTIVE ACTIONS ENGINE -->
-    <script>
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
+  <!-- MOBILE INTERACTIVE ACTIONS ENGINE -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        mobileMenu.classList.toggle("flex");
-      });
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("flex");
+    });
 
-      window.addEventListener("resize", () => {
-        if (window.innerWidth >= 1024) {
-          mobileMenu.classList.add("hidden");
-          mobileMenu.classList.remove("flex");
-        }
-      });
-    </script>
-  </body>
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+      }
+    });
+  </script>
+</body>
+
 </html>
